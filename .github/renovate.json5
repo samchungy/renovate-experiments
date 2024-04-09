@@ -111,5 +111,33 @@
       depNameTemplate: 'buildkite-plugins/docker-buildkite-plugin',
       datasourceTemplate: 'github-tags',
     },
+    {
+      customType: 'regex',
+      fileMatch: ['docs\\/.*\\.md$'],
+      matchStrings: ['docker-compose#(?<currentValue>v[^:]+)'],
+      depNameTemplate: 'buildkite-plugins/docker-compose-buildkite-plugin',
+      datasourceTemplate: 'github-tags',
+    },
+    {
+      customType: 'regex',
+      fileMatch: ['docs\\/.*\\.md$'],
+      matchStrings: ['seek-jobs/gantry#(?<currentValue>v[^:]+)'],
+      depNameTemplate: 'SEEK-Jobs/gantry-buildkite-plugin',
+      datasourceTemplate: 'github-tags',
+    },
+    {
+      customType: 'regex',
+      fileMatch: ['docs\\/.*\\.md$'],
+      matchStrings: ['seek-oss/private-npm#(?<currentValue>v[^:]+)'],
+      depNameTemplate: 'seek-oss/private-npm-buildkite-plugin',
+      datasourceTemplate: 'github-tags',
+    },
+    {
+      customType: 'regex',
+      fileMatch: ['docs\\/.*\\.md$'],
+      matchStrings: ['seek-oss/docker-ecr-cache#(?<currentValue>v[^:]+)'],
+      depNameTemplate: 'seek-oss/docker-ecr-cache-buildkite-plugin',
+      datasourceTemplate: 'github-tags',
+    },
   ],
 }
