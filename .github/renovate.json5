@@ -135,6 +135,7 @@
     {
       customType: 'regex',
       fileMatch: ['pnpm.md$'],
+      // Only update the version in the after diff
       matchStrings: ['\\+ seek-oss/docker-ecr-cache#(?<currentValue>v[^:]+)'],
       depNameTemplate: 'seek-oss/docker-ecr-cache-buildkite-plugin',
       datasourceTemplate: 'github-tags',
