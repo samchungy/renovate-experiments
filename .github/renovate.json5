@@ -110,8 +110,8 @@
       matchStrings: [
         '\\s*(?:-\\s+(?:\\?\\s+)?)?(?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)',
       ],
-      // depNameTemplate: '{{depName}}',
       depNameTemplate: "{{#if (containsString depName '/')}}{{depName}}-buildkite-plugin{{else}}buildkite-plugins/{{depName}}-buildkite-plugin{{/if}}",
+      packageNameTemplate: '{{depName}}',
       datasourceTemplate: 'github-tags',
     },
   ],
