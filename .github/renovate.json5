@@ -108,7 +108,7 @@
       customType: 'regex',
       fileMatch: ['docs\\/.*\\.md$'],
       // Adapted from https://github.com/renovatebot/renovate/blob/c4c8f0caad2425a33358b998fd87f8da09e85820/lib/modules/manager/buildkite/extract.ts#L20
-      matchStrings: ['/docker#v5.0.0/'],
+      matchStrings: ['/(?<depName>docker)#(?<currentValue>v[^:]+)/'],
       packageNameTemplate: "{{#if (containsString depName '/')}}{{depName}}-buildkite-plugin{{else}}buildkite-plugins/{{depName}}-buildkite-plugin{{/if}}",
       depNameTemplate: '{{depName}}',
       datasourceTemplate: 'github-tags',
