@@ -106,14 +106,6 @@
   customManagers: [
     {
       customType: 'regex',
-      fileMatch: ['pnpm.md$'],
-      matchStrings: [
-        '"packageManager": "(?<depName>.*?)@(?<currentValue>.*?)",',
-      ],
-      datasourceTemplate: 'npm',
-    },
-    {
-      customType: 'regex',
       fileMatch: ['docs\\/.*\\.md$'],
 
       // Matches Buildkite plugins but preserves versions in the before diffs
