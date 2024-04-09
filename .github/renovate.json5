@@ -108,8 +108,8 @@
       customType: 'regex',
       fileMatch: ['docs\\/.*\\.md$'],
       // Adapted from https://github.com/renovatebot/renovate/blob/c4c8f0caad2425a33358b998fd87f8da09e85820/lib/modules/manager/buildkite/extract.ts#L20
-      // Specifically match [ \t]* to allow us to create diffs with plugins prefixed with a non-breakable space which we do not want Renovate to update.
-      matchStrings: ['[ \t]*(?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)'],
+      // Specifically match (^|[ \t]|`) to allow us to create diffs with plugins prefixed with a non-breakable space which we do not want Renovate to update.
+      matchStrings: ['(^|[ \t]|`)(?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)'],
       packageNameTemplate: "{{#if (containsString depName '/')}}{{depName}}-buildkite-plugin{{else}}buildkite-plugins/{{depName}}-buildkite-plugin{{/if}}",
       depNameTemplate: '{{depName}}',
       datasourceTemplate: 'github-tags',
