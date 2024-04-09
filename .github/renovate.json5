@@ -110,8 +110,8 @@
       // Adapted from https://github.com/renovatebot/renovate/blob/c4c8f0caad2425a33358b998fd87f8da09e85820/lib/modules/manager/buildkite/extract.ts#L20
       // Specifically match (^|[ \t]|`) to allow us to create diffs with plugins prefixed with a non-breakable space which we do not want Renovate to update.
       matchStrings: [
-        '\\s*(?:-\\s+(?:\\?\\s+)?)?(?<depName>[^#\\s]+)#(?<currentValue>[^:]+)',
-        '![\u202F\u00A0](?<depName>[^#\\s]+)#(?<currentValue>[^:]+)',
+        '\\s*(?:-\\s+(?:\\?\\s+)?)?(?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)',
+        '![\u202F\u00A0](?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)',
       ],
       packageNameTemplate: "{{#if (containsString depName '/')}}{{depName}}-buildkite-plugin{{else}}buildkite-plugins/{{depName}}-buildkite-plugin{{/if}}",
       depNameTemplate: '{{depName}}',
