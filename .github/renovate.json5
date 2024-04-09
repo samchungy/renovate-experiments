@@ -108,10 +108,10 @@
       customType: 'regex',
       fileMatch: ['docs\\/.*\\.md$'],
       matchStrings: [
-        '^\\s*(?:-\\s+(?:\\?\\s+)?)?(?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)',
+        '\\s*(?:-\\s+(?:\\?\\s+)?)?(?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)',
       ],
       // depNameTemplate: '{{depName}}',
-      // depNameTemplate: "{{#if (containsString depName '/')}}{{depName}}-buildkite-plugin{{else}}buildkite-plugins/{{depName}}-buildkite-plugin{{/if}}",
+      depNameTemplate: "{{#if (containsString depName '/')}}{{depName}}-buildkite-plugin{{else}}buildkite-plugins/{{depName}}-buildkite-plugin{{/if}}",
       datasourceTemplate: 'github-tags',
     },
   ],
