@@ -108,6 +108,7 @@
       customType: 'regex',
       fileMatch: ['docs\\/.*\\.md$'],
       matchStrings: [
+        // Copied from https://github.com/renovatebot/renovate/blob/c4c8f0caad2425a33358b998fd87f8da09e85820/lib/modules/manager/buildkite/extract.ts#L20
         '\\s*(?:-\\s+(?:\\?\\s+)?)?(?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)',
       ],
       packageNameTemplate: "{{#if (containsString depName '/')}}{{depName}}-buildkite-plugin{{else}}buildkite-plugins/{{depName}}-buildkite-plugin{{/if}}",
