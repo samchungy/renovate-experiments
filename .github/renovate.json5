@@ -107,7 +107,7 @@
     {
       customType: 'regex',
       fileMatch: ['docs\\/.*\\.md$'],
-      // Adapted from https://github.com/renovatebot/renovate/blob/c4c8f0caad2425a33358b998fd87f8da09e85820/lib/modules/manager/buildkite/extract.ts#L20
+      // This allows us to use the non breaking space to prefix plugins in diffs which we do not want Renovate to update
       matchStrings: [
         '\\s(?<depName>[a-zA-Z0-9\\/_\\.\\-]+)#(?<currentValue>v[^:]+)',
       ],
