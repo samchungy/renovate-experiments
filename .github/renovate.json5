@@ -107,38 +107,10 @@
     {
       customType: 'regex',
       fileMatch: ['docs\\/.*\\.md$'],
-      matchStrings: ['docker#(?<currentValue>v[^:]+)'],
-      depNameTemplate: 'buildkite-plugins/docker-buildkite-plugin',
-      datasourceTemplate: 'github-tags',
-    },
-    {
-      customType: 'regex',
-      fileMatch: ['docs\\/.*\\.md$'],
-      matchStrings: ['docker-compose#(?<currentValue>v[^:]+)'],
-      depNameTemplate: 'buildkite-plugins/docker-compose-buildkite-plugin',
-      datasourceTemplate: 'github-tags',
-    },
-    {
-      customType: 'regex',
-      fileMatch: ['docs\\/.*\\.md$'],
-      matchStrings: ['seek-jobs/gantry#(?<currentValue>v[^:]+)'],
-      depNameTemplate: 'SEEK-Jobs/gantry-buildkite-plugin',
-      datasourceTemplate: 'github-tags',
-    },
-    {
-      customType: 'regex',
-      fileMatch: ['docs\\/.*\\.md$'],
-      matchStrings: ['seek-oss/private-npm#(?<currentValue>v[^:]+)'],
-      depNameTemplate: 'seek-oss/private-npm-buildkite-plugin',
-      datasourceTemplate: 'github-tags',
-    },
-    {
-      customType: 'regex',
-      fileMatch: ['pnpm.md$'],
-      // Only update the version in the after diff
-      matchStrings: ['\\+ seek-oss/docker-ecr-cache#(?<currentValue>v[^:]+)'],
-      packageNameTemplate: 'seek-oss/docker-ecr-cache-buildkite-plugin',
-      depNameTemplate: 'seek-oss/docker-ecr-cache',
+      matchStrings: [
+        '^\\s*(?:-\\s+(?:\\?\\s+)?)?(?<depName>[^#\\s]+)#(?<currentValue>v[^:]+)',
+      ],
+      depNameTemplate: "{{#if (containsString depName '/')}}{{depName}}-buildkite-plugin{{else}}buildkite-plugins/{{depName}}-buildkite-plugin{{/if}}",
       datasourceTemplate: 'github-tags',
     },
   ],
