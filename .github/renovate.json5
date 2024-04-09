@@ -134,8 +134,8 @@
     },
     {
       customType: 'regex',
-      fileMatch: ['docs\\/.*\\.md$'],
-      matchStrings: ['seek-oss/docker-ecr-cache#(?<currentValue>v[^:]+)'],
+      fileMatch: ['pnpm.md$'],
+      matchStrings: ['\\+ seek-oss/docker-ecr-cache#(?<currentValue>v[^:]+)'],
       depNameTemplate: 'seek-oss/docker-ecr-cache-buildkite-plugin',
       datasourceTemplate: 'github-tags',
     },
