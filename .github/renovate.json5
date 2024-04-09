@@ -121,7 +121,7 @@
       // - - docker-compose#v2.0.0: FAIL
       // + - docker-compose#v2.0.0: PASS
       matchStrings: ['- (?<depName>[a-zA-Z0-9\\-\\/]+?)#(?<currentValue>.*?):'],
-      datasourceTemplate: 'github-tags',
+      datasourceTemplate: 'github-releases',
     },
   ],
 }
