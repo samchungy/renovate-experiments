@@ -291,7 +291,7 @@ This migration guide assumes that your project was scaffolded with a **skuba** t
 
     ```diff
     - seek-oss/docker-ecr-cache#v2.1.0:
-    + seek-oss/docker-ecr-cache#v2.1.0:
+    + seek-oss/docker-ecr-cache#v2.2.0:
         cache-on:
     +     - .npmrc
           - package.json
