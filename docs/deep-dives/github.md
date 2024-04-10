@@ -131,6 +131,17 @@ jobs:
         run: pnpm lint
 ```
 
+```yaml
+seek-oss/docker-ecr-cache#v2.1.0:
+  # Enable GitHub integrations.
+  environment:
+    - GITHUB_API_TOKEN
+  propagate-environment: true
+  volumes:
+    # Mount cached dependencies.
+    - /workdir/node_modules
+```
+
 <!-- {% endraw %} -->
 
 ---
