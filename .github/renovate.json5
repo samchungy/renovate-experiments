@@ -119,7 +119,7 @@
       fileMatch: ['test.ts'],
       // This allows us to use the non breaking space to prefix plugins in diffs which we do not want Renovate to update
       matchStrings: [
-        '// renovate: depName=(?: depName=(?<depName>.+?) versioning=loose\\n\\s+.*: (?<nodeLayerVersion>\\d+),',
+        '// renovate: depName=(?: depName=(?<depName>.+?) versioning=loose\\n\\s+.*: (?<currentValue>\\d+),',
       ],
       datasourceTemplate: 'github-tags',
     },
