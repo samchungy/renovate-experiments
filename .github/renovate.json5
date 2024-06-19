@@ -7,7 +7,7 @@
       matchStrings: [
         '\\/\\/\\s?renovate: depName=(?<depName>.*?)\\s?.*:\\s?(?<currentValue>\\d+)',
       ],
-      datasourceTemplate: 'github-tags',
+      datasourceTemplate: 'github-releases',
     },
   ],
 }
