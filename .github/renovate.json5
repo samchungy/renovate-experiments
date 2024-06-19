@@ -8,7 +8,7 @@
         'new Datadog\\([\\S\\s]+nodeLayerVersion:\\s?(?<currentValue>\\d+)',
       ],
       depNameTemplate: 'DataDog/datadog-lambda-js',
-      packageName: 'datadog lambda layer',
+      packageNameTemplate: 'datadog lambda layer',
       extractVersionTemplate: '^v\\d+\\.(?<version>\\d+)\\..*',
       datasourceTemplate: 'github-releases',
     },
