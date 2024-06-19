@@ -132,7 +132,7 @@ jobs:
 ```
 
 ```yaml
-seek-oss/docker-ecr-cache#v2.1.0:
+seek-oss/docker-ecr-cache#v2.2.0:
   # Enable GitHub integrations.
   environment:
     - GITHUB_API_TOKEN
