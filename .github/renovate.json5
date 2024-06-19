@@ -7,6 +7,7 @@
       matchStrings: [
         '\\/\\/\\s?renovate: depName=(?<depName>.*?)\\s?.*:\\s?(?<currentValue>\\d+)',
       ],
+      versioning: 'regex:^v\\d+\\.(?<minor>\\d+)',
       datasourceTemplate: 'github-releases',
     },
   ],
