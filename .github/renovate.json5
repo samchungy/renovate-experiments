@@ -7,7 +7,7 @@
       matchStrings: [
         '\\/\\/\\s?renovate: depName=(?<depName>.*?)\\s?.*:\\s?(?<currentValue>\\d+)',
       ],
-      extractVersionTemplate: '^\\d+(?<version>\\d+).*',
+      extractVersionTemplate: '^v\\d+\\.(?<version>\\d+)\\..*',
       datasourceTemplate: 'github-releases',
     },
   ],
