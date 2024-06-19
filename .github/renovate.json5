@@ -12,5 +12,16 @@
       extractVersionTemplate: '^v\\d+\\.(?<version>\\d+)\\..*',
       datasourceTemplate: 'github-releases',
     },
+    {
+      customType: 'regex',
+      fileMatch: ['test.ts'],
+      // This allows us to use the non breaking space to prefix plugins in diffs which we do not want Renovate to update
+      matchStrings: [
+        'new Datadog\\([\\S\\s]+extensionLayerVersion:\\s?(?<currentValue>\\d+)',
+      ],
+      packageNameTemplate: 'DataDog/datadog-lambda-extension',
+      depNameTemplate: 'datadog lambda extension layer',
+      datasourceTemplate: 'github-releases',
+    },
   ],
 }
