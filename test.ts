@@ -3,6 +3,6 @@ const datadog = new Datadog(this, 'datadog', {
   addLayers: false,
   enableDatadogLogs: false,
   flushMetricsToLogs: false,
-  extensionLayerVersion: 58,
+  extensionLayerVersion: 57,
   nodeLayerVersion: 111,
 });
