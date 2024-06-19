@@ -5,7 +5,7 @@
       fileMatch: ['test.ts'],
       // This allows us to use the non breaking space to prefix plugins in diffs which we do not want Renovate to update
       matchStrings: [
-        'Datadog\\([\\S\\s]+nodeLayerVersion:\\s?(?<currentValue>\\d+)',
+        'new Datadog\\([\\S\\s]+nodeLayerVersion:\\s?(?<currentValue>\\d+)',
       ],
       depNameTemplate: 'DataDog/datadog-lambda-js',
       packageName: 'datadog lambda layer',
