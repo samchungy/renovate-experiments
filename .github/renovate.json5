@@ -4,7 +4,9 @@
       customType: 'regex',
       fileMatch: ['test.ts'],
       // This allows us to use the non breaking space to prefix plugins in diffs which we do not want Renovate to update
-      matchStrings: ['\\s?nodeLayerVersion:\\s?(?<currentValue>\\d+)'],
+      matchStrings: [
+        'Datadog\\([\\S\\s]+nodeLayerVersion:\\s?(?<currentValue>\\d+)',
+      ],
       depNameTemplate: 'DataDog/datadog-lambda-js',
       extractVersionTemplate: '^v\\d+\\.(?<version>\\d+)\\..*',
       datasourceTemplate: 'github-releases',
