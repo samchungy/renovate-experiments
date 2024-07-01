@@ -33,4 +33,5 @@
       replacementVersion: '8.10.140',
     },
   ],
+  postUpdateOptions: ['pnpmDedupe'],
 }
