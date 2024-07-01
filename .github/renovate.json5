@@ -26,8 +26,8 @@
   ],
   packageRules: [
     {
-      matchDatasources: ['npm'],
-      matchPackageNames: ['aws-lambda'],
+      matchManagers: ['npm'],
+      matchDepNames: ['aws-lambda'],
       replacementName: '@types/aws-lambda',
       replacementVersion: 'latest',
     },
