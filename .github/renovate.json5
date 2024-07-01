@@ -30,7 +30,7 @@
       matchDepNames: ['aws-lambda'],
       rangeStrategy: 'pin',
       replacementName: '@types/aws-lambda',
-      replacementVersion: 'latest',
+      replacementVersion: '8.10.140',
     },
   ],
 }
