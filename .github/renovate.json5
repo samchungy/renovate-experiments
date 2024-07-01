@@ -24,4 +24,11 @@
       datasourceTemplate: 'github-releases',
     },
   ],
+  packageRules: [
+    {
+      matchDatasources: ['npm'],
+      matchPackageNames: ['aws-lambda'],
+      replacementName: '@types/aws-lambda',
+    },
+  ],
 }
