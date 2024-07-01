@@ -8,11 +8,17 @@ importers:
 
   .:
     devDependencies:
+      '@types/aws-lambda':
+        specifier: 8.10.140
+        version: 8.10.140
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
 
 packages:
+
+  '@types/aws-lambda@8.10.140':
+    resolution: {integrity: sha512-4Dh3dk2TUcbdfHrX0Al90mNGJDvA9NBiTQPzbrjGi/dLxzKCGOYgT8YQ47jUKNFALkAJAadifq0pzyjIUlhVhg==}
 
   argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
@@ -183,6 +189,8 @@ packages:
     engines: {node: '>=4.0'}
 
 snapshots:
+
+  '@types/aws-lambda@8.10.140': {}
 
   argparse@1.0.10:
     dependencies:
