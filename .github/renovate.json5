@@ -28,6 +28,7 @@
     {
       matchManagers: ['npm'],
       matchDepNames: ['aws-lambda'],
+      rangeStrategy: 'pin',
       replacementName: '@types/aws-lambda',
       replacementVersion: 'latest',
     },
