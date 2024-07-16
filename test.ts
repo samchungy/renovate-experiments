@@ -4,5 +4,5 @@ const datadog = new Datadog(this, 'datadog', {
   enableDatadogLogs: false,
   flushMetricsToLogs: false,
   extensionLayerVersion: 57,
-  nodeLayerVersion: 111,
+  nodeLayerVersion: 113,
 });
