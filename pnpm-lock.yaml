@@ -9,14 +9,14 @@ importers:
   .:
     devDependencies:
       '@types/aws-lambda':
-        specifier: 8.10.140
-        version: 8.10.140
+        specifier: 8.10.142
+        version: 8.10.142
 
 packages:
 
-  '@types/aws-lambda@8.10.140':
-    resolution: {integrity: sha512-4Dh3dk2TUcbdfHrX0Al90mNGJDvA9NBiTQPzbrjGi/dLxzKCGOYgT8YQ47jUKNFALkAJAadifq0pzyjIUlhVhg==}
+  '@types/aws-lambda@8.10.142':
+    resolution: {integrity: sha512-wy2y/2hQKrS6myOS++koXg3N1Hg+LLyPjaggCFajczSHZPqBnOMuT2sdH3kiASrmdBYyM3pmjyz5SoWraRllCQ==}
 
 snapshots:
 
-  '@types/aws-lambda@8.10.140': {}
+  '@types/aws-lambda@8.10.142': {}
