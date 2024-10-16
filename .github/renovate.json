@@ -17,18 +17,15 @@
   "packageRules": [
     {
       "matchDepTypes": ["peerDependencies"],
-
       "rangeStrategy": "widen"
     },
     {
       "matchManagers": ["buildkite", "gomod", "npm", "nvm"],
-
       "commitMessageExtra": "{{newValue}}",
       "commitMessageTopic": "{{depName}}"
     },
     {
       "matchManagers": ["gomod"],
-
       "digest": {
         "commitMessageExtra": "",
         "groupName": "gomod digests",
@@ -39,14 +36,12 @@
     {
       "matchDepTypes": ["dependencies", "peerDependencies"],
       "matchManagers": ["npm"],
-
       "semanticCommitType": "fix"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["@types/node", "node-fetch"],
       "matchUpdateTypes": ["major"],
-
       "enabled": false
     },
     {
@@ -60,13 +55,11 @@
       "matchManagers": ["npm"],
       "matchDepNames": ["dd-trace"],
       "matchUpdateTypes": ["major", "minor"],
-
       "minimumReleaseAge": "14 days"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["aws-sdk-mock"],
-
       "allowedVersions": "!/^5\\.5\\.0$/"
     },
     {
@@ -77,69 +70,64 @@
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["@types/faker", "faker"],
-
       "allowedVersions": "< 6"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["dd-trace"],
-
       "allowedVersions": "!/^(3\\.42\\.0|4\\.21\\.0)$/"
     },
     {
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["^@types/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
-
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/^@types//"]
     },
     {
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["^@types/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
-
       "commitMessageExtra": "",
       "groupName": "npm definitely typed",
       "prPriority": 99,
-      "schedule": "before 3:00 am every 2 weeks on Tuesday"
+      "schedule": "before 3:00 am every 2 weeks on Tuesday",
+      "matchPackageNames": ["/^@types//"]
     },
     {
-      "excludePackageNames": ["aws-sdk", "braid-design-system", "sku", "skuba"],
-      "excludePackagePatterns": [
-        "^@?seek",
-        "seek$",
-        "^@aws-sdk/",
-        "^@types/",
-        "^@vanilla-extract/",
-        "^serverless"
-      ],
       "matchDepTypes": ["devDependencies"],
       "matchManagers": ["npm"],
       "matchUpdateTypes": ["major", "minor", "patch"],
-
       "commitMessageExtra": "",
       "groupName": "npm dev dependencies",
-      "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Tuesday"
+      "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Tuesday",
+      "matchPackageNames": [
+        "!aws-sdk",
+        "!braid-design-system",
+        "!sku",
+        "!skuba",
+        "!/^@?seek/",
+        "!/seek$/",
+        "!/^@aws-sdk//",
+        "!/^@types//",
+        "!/^@vanilla-extract//",
+        "!/^serverless/"
+      ]
     },
     {
       "matchDepTypes": ["peerDependencies"],
       "matchManagers": ["npm"],
       "matchUpdateTypes": ["major", "minor", "patch"],
-
       "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Tuesday"
     },
     {
-      "excludePackagePatterns": ["^seek-jobs/", "^seek-oss/"],
       "matchManagers": ["buildkite"],
-
       "additionalBranchPrefix": "",
       "commitMessageExtra": "",
       "groupName": "buildkite plugins",
-      "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Wednesday"
+      "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Wednesday",
+      "matchPackageNames": ["!/^seek-jobs//", "!/^seek-oss//"]
     },
     {
       "matchManagers": ["docker-compose", "dockerfile"],
-
       "commitMessageExtra": "",
       "group": {
         "commitMessageTopic": "{{groupName}}"
@@ -149,17 +137,15 @@
     },
     {
       "matchDepNames": ["braid-design-system", "sku", "skuba"],
-      "matchPackagePatterns": ["^@?seek", "seek$", "^@vanilla-extract/"],
-
       "prPriority": 98,
       "schedule": "after 3:00 am and before 6:00 am every weekday",
       "minimumReleaseAge": "0 days",
-      "updateNotScheduled": true
+      "updateNotScheduled": true,
+      "matchPackageNames": ["/^@?seek/", "/seek$/", "/^@vanilla-extract//"]
     },
     {
       "matchManagers": ["buildkite"],
       "matchDepNames": ["seek-jobs/gantry", "seek-jobs/automat"],
-
       "schedule": "after 3:00 am and before 5:00 pm every weekday",
       "minimumReleaseAge": "0 days",
       "updateNotScheduled": true
@@ -167,20 +153,18 @@
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["aws-sdk", "serverless"],
-      "matchPackagePatterns": ["^@aws-sdk/", "^@smithy/"],
       "matchUpdateTypes": ["major", "minor", "patch"],
-
       "commitMessageExtra": "",
       "groupName": "aws-sdk and serverless",
       "schedule": "after 3:00 am and before 6:00 am on the first day of the month",
       "minimumReleaseAge": "0 days",
-      "updateNotScheduled": true
+      "updateNotScheduled": true,
+      "matchPackageNames": ["/^@aws-sdk//", "/^@smithy//"]
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["apollo-server-plugin-base", "apollo-server-types"],
       "matchUpdateTypes": ["major", "minor", "patch"],
-
       "groupName": "apollo-server monorepo"
     },
     {
@@ -193,7 +177,6 @@
         "@seek/ie-shared-types",
         "@seek/indie-cardib-types"
       ],
-
       "automerge": true,
       "minimumReleaseAge": "0 days",
       "updateNotScheduled": true
@@ -208,14 +191,12 @@
         "@seek/ie-shared-types",
         "@seek/indie-cardib-types"
       ],
-
       "schedule": "before 3:00 am every weekday"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["sku", "skuba"],
       "matchUpdateTypes": ["patch"],
-
       "automerge": true,
       "minimumReleaseAge": "0 days",
       "updateNotScheduled": true
@@ -230,7 +211,6 @@
         "@seek/indie-mocks"
       ],
       "matchUpdateTypes": ["minor", "patch"],
-
       "automerge": true,
       "schedule": "before 3:00 am every weekday",
       "minimumReleaseAge": "0 days",
@@ -238,29 +218,24 @@
     },
     {
       "matchDepNames": ["react-relay"],
-      "matchPackagePatterns": ["^relay-"],
-
-      "groupName": "relay"
+      "groupName": "relay",
+      "matchPackageNames": ["/^relay-/"]
     },
     {
       "matchUpdateTypes": ["lockFileMaintenance"],
-
       "automerge": true
     },
     {
       "matchUpdateTypes": ["lockFileMaintenance"],
-
       "prPriority": 99,
       "schedule": "before 3:00 am every 2 weeks on Wednesday"
     },
     {
       "matchUpdateTypes": ["pin"],
-
       "automerge": true
     },
     {
       "matchUpdateTypes": ["pin"],
-
       "prPriority": 99,
       "schedule": "before 3:00 am every weekday"
     },
