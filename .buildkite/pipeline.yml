@@ -5,7 +5,7 @@ configs:
         env:
           NPM_READ_TOKEN: arn:aws:secretsmanager:ap-southeast-2:987872074697:secret:npm/npm-read-token
     - &docker-compose
-      docker-compose#v5.3.0:
+      docker-compose#v5.2.0:
         environment:
           - GITHUB_API_TOKEN
         propagate-environment: true
