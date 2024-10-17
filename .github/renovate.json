@@ -1,0 +1,45 @@
+{
+  "extends": [
+    ":dependencyDashboard",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":timezone(Australia/Melbourne)",
+    "preview:buildkite",
+    "preview:dockerCompose",
+    "docker:disableMajor",
+    "group:monorepos",
+    "docker:pinDigests"
+  ],
+  "configMigration": true,
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": ["!/^seek-jobs//", "!/^seek-oss//"],
+      "matchManagers": ["buildkite"],
+
+      "additionalBranchPrefix": "",
+      "commitMessageExtra": "",
+      "groupName": "buildkite plugins"
+    }
+  ],
+  "branchConcurrentLimit": null,
+  "branchPrefix": "renovate-",
+  "commitMessageAction": "",
+  "gitIgnoredAuthors": [
+    "34733141+seek-oss-ci@users.noreply.github.com",
+    "87109344+buildagencygitapitoken[bot]@users.noreply.github.com"
+  ],
+  "postUpdateOptions": ["yarnDedupeFewer", "pnpmDedupe"],
+  "prConcurrentLimit": 3,
+  "prNotPendingHours": 1,
+  "rangeStrategy": "replace",
+  "schedule": "after 3:00 am and before 6:00 am on Monday and Friday",
+  "semanticCommitScope": "",
+  "semanticCommitType": "deps",
+  "prCreation": "immediate",
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "updateNotScheduled": false
+}
