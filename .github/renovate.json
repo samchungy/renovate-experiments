@@ -16,7 +16,7 @@
   },
   "packageRules": [
     {
-      "matchPackageNames": ["!/^seek-jobs//", "!/^seek-oss//"],
+      "matchPackageNames": ["!/^seek-jobs\\//", "!/^seek-oss\\//"],
       "matchManagers": ["buildkite"],
 
       "additionalBranchPrefix": "",
