@@ -1,45 +1,15 @@
 {
-  "extends": [
-    ":dependencyDashboard",
-    ":rebaseStalePrs",
-    ":semanticCommits",
-    ":timezone(Australia/Melbourne)",
-    "preview:buildkite",
-    "preview:dockerCompose",
-    "docker:disableMajor",
-    "group:monorepos",
-    "docker:pinDigests"
-  ],
-  "configMigration": true,
-  "lockFileMaintenance": {
-    "enabled": true
-  },
-  "packageRules": [
+  "extends": ["github>seek-oss/rynovate"],
+  "customManagers": [
     {
-      "matchPackageNames": ["!/^seek-jobs//", "!/^seek-os//"],
-      "matchManagers": ["buildkite"],
-
-      "additionalBranchPrefix": "",
-      "commitMessageExtra": "",
-      "groupName": "buildkite plugins"
+      "customType": "regex",
+      "fileMatch": ["src/infra/**/*.ts"],
+      "matchStrings": [
+        "const DATADOG_EXTENSION_LAYER_VERSION = (?<currentValue>\\d+)"
+      ],
+      "packageNameTemplate": "DataDog/datadog-lambda-extension",
+      "depNameTemplate": "datadog lambda extension layer",
+      "datasourceTemplate": "github-releases"
     }
-  ],
-  "branchConcurrentLimit": null,
-  "branchPrefix": "renovate-",
-  "commitMessageAction": "",
-  "gitIgnoredAuthors": [
-    "34733141+seek-oss-ci@users.noreply.github.com",
-    "87109344+buildagencygitapitoken[bot]@users.noreply.github.com"
-  ],
-  "postUpdateOptions": ["yarnDedupeFewer", "pnpmDedupe"],
-  "prConcurrentLimit": 3,
-  "prNotPendingHours": 1,
-  "rangeStrategy": "replace",
-  "schedule": "after 3:00 am and before 6:00 am on Monday and Friday",
-  "semanticCommitScope": "",
-  "semanticCommitType": "deps",
-  "prCreation": "immediate",
-  "minimumReleaseAge": "3 days",
-  "internalChecksFilter": "strict",
-  "updateNotScheduled": false
+  ]
 }
