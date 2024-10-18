@@ -3,7 +3,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["src/infra/**/*.ts"],
+      "fileMatch": ["/src/infra/*.ts/"],
       "matchStrings": [
         "const DATADOG_EXTENSION_LAYER_VERSION = (?<currentValue>\\d+)"
       ],
