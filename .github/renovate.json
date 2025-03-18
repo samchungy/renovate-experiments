@@ -9,7 +9,9 @@
       "packageNameTemplate": "DataDog/datadog-lambda-extension",
       "depNameTemplate": "datadog lambda extension layer",
       "datasourceTemplate": "github-releases"
-    },
+    }
+  ],
+  "packageRules": [
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["@types/node"],
