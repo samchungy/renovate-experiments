@@ -1,5 +1,4 @@
 {
-  "extends": ["github>seek-oss/rynovate"],
   "customManagers": [
     {
       "customType": "regex",
@@ -10,6 +9,11 @@
       "packageNameTemplate": "DataDog/datadog-lambda-extension",
       "depNameTemplate": "datadog lambda extension layer",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["@types/node"],
+      "allowedVersions": "<=22"
     }
   ]
 }
