@@ -12,26 +12,26 @@ importers:
         specifier: 8.10.139
         version: 8.10.139
       '@types/node':
-        specifier: 20.12.0
-        version: 20.12.0
+        specifier: 22.13.14
+        version: 22.13.14
 
 packages:
 
   '@types/aws-lambda@8.10.139':
     resolution: {integrity: sha512-n+RhGv0ONxnelVLw1J301bwaqxVDP2SWzHocLHxfAbI3lsvji1SXvFR+mB9ttfg7x3kLM6EWe5FnmIEoZNwpRw==}
 
-  '@types/node@20.12.0':
-    resolution: {integrity: sha512-jVC7fWX1Did5TNn8mmGsE81mdyv+7a+nHNlUiNVys8G392CfNfhqAVRd+cuY0+OBU2vN6GzpiRX/MgJ9b3rtpQ==}
+  '@types/node@22.13.14':
+    resolution: {integrity: sha512-Zs/Ollc1SJ8nKUAgc7ivOEdIBM8JAKgrqqUYi2J997JuKO7/tpQC+WCetQ1sypiKCQWHdvdg9wBNpUPEWZae7w==}
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
 snapshots:
 
   '@types/aws-lambda@8.10.139': {}
 
-  '@types/node@20.12.0':
+  '@types/node@22.13.14':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.20.0
 
-  undici-types@5.26.5: {}
+  undici-types@6.20.0: {}
