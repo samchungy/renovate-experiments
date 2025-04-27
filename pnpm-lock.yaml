@@ -9,16 +9,16 @@ importers:
   .:
     devDependencies:
       '@types/aws-lambda':
-        specifier: 8.10.139
-        version: 8.10.139
+        specifier: 8.10.149
+        version: 8.10.149
       '@types/node':
         specifier: 20.12.0
         version: 20.12.0
 
 packages:
 
-  '@types/aws-lambda@8.10.139':
-    resolution: {integrity: sha512-n+RhGv0ONxnelVLw1J301bwaqxVDP2SWzHocLHxfAbI3lsvji1SXvFR+mB9ttfg7x3kLM6EWe5FnmIEoZNwpRw==}
+  '@types/aws-lambda@8.10.149':
+    resolution: {integrity: sha512-NXSZIhfJjnXqJgtS7IwutqIF/SOy1Wz5Px4gUY1RWITp3AYTyuJS4xaXr/bIJY1v15XMzrJ5soGnPM+7uigZjA==}
 
   '@types/node@20.12.0':
     resolution: {integrity: sha512-jVC7fWX1Did5TNn8mmGsE81mdyv+7a+nHNlUiNVys8G392CfNfhqAVRd+cuY0+OBU2vN6GzpiRX/MgJ9b3rtpQ==}
@@ -28,7 +28,7 @@ packages:
 
 snapshots:
 
-  '@types/aws-lambda@8.10.139': {}
+  '@types/aws-lambda@8.10.149': {}
 
   '@types/node@20.12.0':
     dependencies:
