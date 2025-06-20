@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "dependencyDashboard": true,
   "customManagers": [
     {
@@ -17,6 +18,11 @@
       "matchManagers": ["npm"],
       "matchDepNames": ["@types/node"],
       "allowedVersions": "<=22"
+    },
+    {
+      "matchDepNames": "koa-bodyparser",
+      "matchManagers": ["npm"],
+      "replacementName": "@koa/bodyparser"
     }
   ]
 }
