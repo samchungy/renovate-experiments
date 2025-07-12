@@ -4,7 +4,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)infra/.*\\.ts$"],
+      "managerFilePatterns": ["/(^|/)infra/.*\\.ts$/"],
       "matchStrings": [
         "const DATADOG_EXTENSION_LAYER_VERSION = (?<currentValue>\\d+)"
       ],
