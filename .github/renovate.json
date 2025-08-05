@@ -7,6 +7,18 @@
   },
   "packageRules": [
     {
+      "groupName": "koa-family",
+      "matchPackageNames": ["koa", "@types/koa"],
+      "separateMajorMinor": false,
+      "allowedVersions": "/^3\\./"
+    },
+    {
+      "groupName": "koa-family",
+      "matchPackageNames": ["seek-koala"],
+      "separateMajorMinor": false,
+      "allowedVersions": "7.1.0"
+    },
+    {
       "matchDepNames": [
         "react",
         "react-dom",
