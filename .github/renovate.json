@@ -8,7 +8,8 @@
   "packageRules": [
     {
       "groupName": "koa-family",
-      "matchPackageNames": ["koa", "@types/koa", "seek-koala"]
+      "matchPackageNames": ["koa", "@types/koa", "seek-koala"],
+      "separateMajorMinor": false
     },
     {
       "matchDepNames": [
