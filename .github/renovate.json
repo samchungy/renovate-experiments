@@ -7,6 +7,13 @@
   },
   "packageRules": [
     {
+      "matchDatasources": ["npm"],
+      "matchDepNames": ["@types/koa", "koa", "seek-koala"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "groupName": "koafoo",
+      "groupSlug": "koafoo"
+    },
+    {
       "matchDepNames": [
         "react",
         "react-dom",
@@ -59,12 +66,6 @@
       "matchPackageNames": ["koa-bodyparser", "@types/koa-bodyparser"],
       "replacementName": "@koa/bodyparser",
       "replacementVersion": "6.0.0"
-    },
-    {
-      "matchDatasources": ["npm"],
-      "matchDepNames": ["@types/koa", "koa", "seek-koala"],
-      "groupName": "koafoo",
-      "groupSlug": "koafoo"
     }
   ],
   "gitIgnoredAuthors": [
