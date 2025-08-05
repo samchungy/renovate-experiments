@@ -7,11 +7,8 @@
   },
   "packageRules": [
     {
-      "matchDatasources": ["npm"],
-      "matchDepNames": ["@types/koa", "koa", "seek-koala"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "groupName": "koafoo",
-      "groupSlug": "koafoo"
+      "groupName": "koa-family",
+      "matchPackageNames": ["koa", "@types/koa", "seek-koala"]
     },
     {
       "matchDepNames": [
