@@ -7,18 +7,6 @@
   },
   "packageRules": [
     {
-      "groupName": "koa",
-      "matchPackageNames": ["koa", "@types/koa"],
-      "separateMajorMinor": false,
-      "matchCurrentVersion": "^2.0.0"
-    },
-    {
-      "groupName": "koa",
-      "matchPackageNames": ["seek-koala"],
-      "separateMajorMinor": false,
-      "matchCurrentVersion": ">=7.0.0 <7.1.0"
-    },
-    {
       "matchDepNames": [
         "react",
         "react-dom",
@@ -71,6 +59,18 @@
       "matchPackageNames": ["koa-bodyparser", "@types/koa-bodyparser"],
       "replacementName": "@koa/bodyparser",
       "replacementVersion": "6.0.0"
+    },
+    {
+      "groupName": "koa 3",
+      "matchPackageNames": ["koa", "@types/koa"],
+      "separateMajorMinor": false,
+      "matchCurrentVersion": "^2.0.0"
+    },
+    {
+      "groupName": "koa 3",
+      "matchPackageNames": ["seek-koala"],
+      "separateMajorMinor": false,
+      "matchCurrentVersion": ">=7.0.0 <7.1.0"
     }
   ],
   "gitIgnoredAuthors": [
