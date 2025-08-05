@@ -16,7 +16,7 @@
       "groupName": "koa",
       "matchPackageNames": ["seek-koala"],
       "separateMajorMinor": false,
-      "allowedVersions": "7.1.0"
+      "allowedVersions": "/^7\\./"
     },
     {
       "matchDepNames": [
