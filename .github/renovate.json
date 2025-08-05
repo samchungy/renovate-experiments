@@ -63,8 +63,8 @@
     {
       "matchDatasources": ["npm"],
       "matchDepNames": ["@types/koa", "koa", "seek-koala"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "groupName": "koa"
+      "groupName": "koa",
+      "groupSlug": "koa"
     }
   ],
   "gitIgnoredAuthors": [
