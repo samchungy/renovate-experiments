@@ -7,13 +7,13 @@
   },
   "packageRules": [
     {
-      "groupName": "koa-family",
+      "groupName": "koa",
       "matchPackageNames": ["koa", "@types/koa"],
       "separateMajorMinor": false,
       "allowedVersions": "/^3\\./"
     },
     {
-      "groupName": "koa-family",
+      "groupName": "koa",
       "matchPackageNames": ["seek-koala"],
       "separateMajorMinor": false,
       "allowedVersions": "7.1.0"
