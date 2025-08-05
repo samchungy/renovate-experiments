@@ -10,13 +10,13 @@
       "groupName": "koa",
       "matchPackageNames": ["koa", "@types/koa"],
       "separateMajorMinor": false,
-      "allowedVersions": "/^3\\./"
+      "matchCurrentVersion": "^2.0.0"
     },
     {
       "groupName": "koa",
       "matchPackageNames": ["seek-koala"],
       "separateMajorMinor": false,
-      "allowedVersions": "/^7\\./"
+      "matchCurrentVersion": ">=7.0.0 <7.1.0"
     },
     {
       "matchDepNames": [
