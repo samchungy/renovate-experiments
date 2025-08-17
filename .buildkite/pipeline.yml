@@ -11,4 +11,4 @@ configs:
         propagate-environment: true
         run: app
     - &docker
-      docker#v5.10.0:
+      docker#v5.13.0:
