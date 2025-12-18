@@ -74,8 +74,18 @@
     },
     {
       "matchDatasources": ["docker"],
-      "matchPackageNames": ["gcr.io/distroless/nodejs*-debian12"],
+      "matchPackageNames": ["gcr.io/distroless/nodejs22-debian12"],
       "replacementName": "gcr.io/distroless/nodejs22-debian13"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["gcr.io/distroless/nodejs20-debian12"],
+      "replacementName": "gcr.io/distroless/nodejs20-debian13"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["gcr.io/distroless/nodejs24-debian12"],
+      "replacementName": "gcr.io/distroless/nodejs24-debian13"
     }
   ],
   "gitIgnoredAuthors": [
