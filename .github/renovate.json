@@ -86,6 +86,11 @@
       "matchDatasources": ["docker"],
       "matchPackageNames": ["gcr.io/distroless/nodejs24-debian12"],
       "replacementName": "gcr.io/distroless/nodejs24-debian13"
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["dd-trace"],
+      "allowedVersions": "!/^5\\.0\\.0$/"
     }
   ],
   "gitIgnoredAuthors": [
