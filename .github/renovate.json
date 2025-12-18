@@ -75,8 +75,7 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["gcr.io/distroless/nodejs22-debian12"],
-      "replacementNameTemplate": "{{{replace 'debian12' 'debian13' packageName}}}",
-      "pinDigest": false
+      "overridePackageName": "gcr.io/distroless/nodejs22-debian13"
     }
   ],
   "gitIgnoredAuthors": [
