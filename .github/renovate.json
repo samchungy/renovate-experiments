@@ -92,7 +92,8 @@
       "matchDatasources": ["npm"],
       "matchPackageNames": ["dd-trace"],
       "matchCurrentVersion": "5.80.0",
-      "matchNewValue": "5.79.0"
+      "replacementName": "dd-trace",
+      "replacementVersion": "5.79.0"
     },
     {
       "matchDatasources": ["npm"],
