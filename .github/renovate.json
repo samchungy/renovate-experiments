@@ -97,7 +97,8 @@
     {
       "matchDatasources": ["npm"],
       "matchPackageNames": ["dd-trace"],
-      "allowedVersions": "!/^5\\.0\\.0$/"
+      "allowedVersions": "< 5.80.0",
+      "rollbackPrs": true
     }
   ],
   "gitIgnoredAuthors": [
