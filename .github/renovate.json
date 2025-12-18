@@ -74,7 +74,7 @@
     },
     {
       "matchDatasources": ["docker"],
-      "matchPackageNames": ["gcr.io/distroless/nodejs(20|22|24)-debian12"],
+      "matchPackageNames": ["gcr.io/distroless/nodejs22-debian12"],
       "replacementNameTemplate": "{{{replace 'debian12' 'debian13' packageName}}}"
     }
   ],
