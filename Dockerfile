@@ -12,7 +12,7 @@ RUN pnpm --filter api --prod --offline deploy api
 
 ###
 
-FROM gcr.io/distroless/nodejs22-debian12@sha256:b25d2acae94fcf57d27f3ac29135ecdce9c0be1e8585ef52262f0dde6b36ce72 AS runtime
+FROM gcr.io/distroless/nodejs22-debian12@sha256:5c65bac666660d114d2d7588e39333e92b4a1685ba66bdf3c6faaedab2b4be6e AS runtime
 
 WORKDIR /workdir
 
