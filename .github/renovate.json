@@ -91,13 +91,13 @@
     {
       "matchDatasources": ["npm"],
       "matchPackageNames": ["dd-trace"],
-      "allowedVersions": "!/^5\\.0\\.0$/"
+      "matchCurrentVersion": "5.80.0",
+      "matchNewValue": "5.79.0"
     },
     {
       "matchDatasources": ["npm"],
       "matchPackageNames": ["dd-trace"],
-      "matchCurrentVersion": "5.80.0",
-      "matchNewValue": "5.79.0"
+      "allowedVersions": "!/^5\\.0\\.0$/"
     }
   ],
   "gitIgnoredAuthors": [
