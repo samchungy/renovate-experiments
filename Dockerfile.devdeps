@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:22-alpine@sha256:9632533eda8061fc1e9960cfb3f8762781c07a00ee7317f5dc0e13c05e15166f AS dev-deps
+FROM public.ecr.aws/docker/library/node:25-alpine@sha256:0d9532ae8efaec8b3067e9f54cdad69d64f2cd5022960df840243a860b0a8c72 AS dev-deps
 
 ENV COREPACK_DEFAULT_TO_LATEST=0
 
