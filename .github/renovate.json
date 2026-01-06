@@ -89,6 +89,14 @@
       "replacementName": "gcr.io/distroless/nodejs24-debian13"
     },
     {
+      "customType": "regex",
+      "fileMatch": ["pnpm.md$", "(^|/)_package\\.json$"],
+      "matchStrings": [
+        "\"packageManager\": \"(?<depName>.*?)@(?<currentValue>.*?)\","
+      ],
+      "datasourceTemplate": "npm"
+    },
+    {
       "matchDatasources": ["npm"],
       "matchPackageNames": ["dd-trace"],
       "matchCurrentVersion": "5.80.0",
