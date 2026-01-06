@@ -1,0 +1,51 @@
+{
+  "name": "<%- moduleName %>",
+  "version": "0.0.0-semantically-released",
+  "description": "<%- description %>",
+  "imports": {
+    "#src/*": {
+      "@seek/<%- serviceName %>/source": "./src/*",
+      "default": "./lib/*"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/<%- orgName %>/<%- repoName %>.git"
+  },
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "main": "./lib-commonjs/index.js",
+  "module": "./lib-es2015/index.js",
+  "types": "./lib-types/index.d.ts",
+  "files": [
+    "lib*/**/*.d.ts",
+    "lib*/**/*.js",
+    "lib*/**/*.js.map",
+    "lib*/**/*.json"
+  ],
+  "scripts": {
+    "build": "skuba build-package",
+    "commit": "cz",
+    "format": "skuba format",
+    "lint": "skuba lint",
+    "release": "pnpm --silent build && skuba release",
+    "test": "skuba test --coverage",
+    "test:ci": "pnpm --silent test",
+    "test:watch": "skuba test --watch"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "commitizen": "^4.2.4",
+    "skuba": "*"
+  },
+  "packageManager": "pnpm@10.7.0",
+  "engines": {
+    "node": ">=20"
+  }
+}
