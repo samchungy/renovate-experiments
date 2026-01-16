@@ -29,37 +29,31 @@
       "matchManagers": ["npm"],
       "matchDepNames": ["dd-trace"],
       "matchUpdateTypes": ["major", "minor"],
-
       "minimumReleaseAge": "14 days"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["@aws-sdk/credential-providers"],
-
       "allowedVersions": "!/^3\\.730\\.0$/"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["aws-sdk-mock"],
-
       "allowedVersions": "!/^5\\.5\\.0$/"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["@types/faker", "faker"],
-
       "allowedVersions": "< 6"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["dotenv"],
-
       "allowedVersions": "< 17"
     },
     {
       "matchManagers": ["npm"],
       "matchDepNames": ["dd-trace"],
-
       "allowedVersions": "!/^(3\\.42\\.0|4\\.21\\.0|5\\.4[1-3]\\.\\d+)$/"
     },
     {
@@ -95,7 +89,6 @@
       "matchPackageNames": ["gcr.io/distroless/nodejs24-debian12"],
       "replacementName": "gcr.io/distroless/nodejs24-debian13"
     },
-
     {
       "matchDatasources": ["npm"],
       "matchPackageNames": ["dd-trace"],
@@ -113,7 +106,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["pnpm.md$", "(^|/)_package\\.json$"],
+      "managerFilePatterns": ["/pnpm.md$/", "/(^|/)_package\\.json$/"],
       "matchStrings": [
         "\"packageManager\": \"(?<depName>.*?)@(?<currentValue>.*?)\","
       ],
