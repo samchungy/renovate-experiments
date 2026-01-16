@@ -20,6 +20,12 @@
       "enabled": false
     },
     {
+      "matchUpdateTypes": ["digest", "pinDigest"],
+      "matchManagers": ["dockerfile"],
+      "automerge": true,
+      "recreateWhen": "always"
+    },
+    {
       "matchManagers": ["npm"],
       "matchDepNames": ["dd-trace"],
       "matchUpdateTypes": ["major", "minor"],
