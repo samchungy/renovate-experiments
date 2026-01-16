@@ -2,7 +2,7 @@ ARG BASE_IMAGE
 
 ###
 
-FROM ${BASE_IMAGE} AS build
+FROM public.ecr.aws/docker/library/node:22-alpine AS build
 
 COPY . .
 
