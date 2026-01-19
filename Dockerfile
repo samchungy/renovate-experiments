@@ -2,7 +2,7 @@ ARG BASE_IMAGE
 
 ###
 
-FROM public.ecr.aws/docker/library/node:22-alpine AS build
+FROM public.ecr.aws/docker/library/node:22-alpine@sha256:a9cd9bac76cf2396abf14ff0d1c3671a8175fe577ce350e62ab0fc1678050176 AS build
 
 COPY . .
 
@@ -12,7 +12,7 @@ RUN pnpm --filter api --prod --offline deploy api
 
 ###
 
-FROM gcr.io/distroless/nodejs22-debian12 AS runtime
+FROM gcr.io/distroless/nodejs22-debian13 AS runtime
 
 WORKDIR /workdir
 
