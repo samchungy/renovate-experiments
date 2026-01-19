@@ -13,7 +13,7 @@
     "@types/aws-lambda": "8.10.139",
     "@types/node": "20.12.0",
     "koa-bodyparser": "4.4.1",
-    "koa": "1.7.1",
+    "koa": "2.16.3",
     "@types/koa": "2.15.0",
     "seek-koala": "7.0.6",
     "dd-trace": "5.80.0"
