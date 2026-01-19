@@ -1,131 +1,15 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "dependencyDashboard": true,
-  "configMigration": true,
-  "lockFileMaintenance": {
-    "enabled": true
-  },
-  "extends": ["docker:pinDigests"],
-  "minimumReleaseAge": "3 days",
+  "extends": ["local>seek-jobs/indie-renovate-config"],
   "packageRules": [
     {
-      "matchDepNames": [
-        "react",
-        "react-dom",
-        "@types/react",
-        "@types/react-dom",
-        "gaxios"
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "gcr.io/distroless/nodejs20-debian12",
+        "gcr.io/distroless/nodejs22-debian12",
+        "gcr.io/distroless/nodejs24-debian12"
       ],
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": ["pinDigest"],
       "enabled": false
-    },
-    {
-      "matchUpdateTypes": ["digest", "pinDigest"],
-      "matchManagers": ["dockerfile"],
-      "automerge": true,
-      "recreateWhen": "always"
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchDepNames": ["dd-trace"],
-      "matchUpdateTypes": ["major", "minor"],
-
-      "minimumReleaseAge": "14 days"
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchDepNames": ["@aws-sdk/credential-providers"],
-
-      "allowedVersions": "!/^3\\.730\\.0$/"
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchDepNames": ["aws-sdk-mock"],
-
-      "allowedVersions": "!/^5\\.5\\.0$/"
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchDepNames": ["@types/faker", "faker"],
-
-      "allowedVersions": "< 6"
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchDepNames": ["dotenv"],
-
-      "allowedVersions": "< 17"
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchDepNames": ["dd-trace"],
-
-      "allowedVersions": "!/^(3\\.42\\.0|4\\.21\\.0|5\\.4[1-3]\\.\\d+)$/"
-    },
-    {
-      "matchDatasources": ["npm"],
-      "matchPackageNames": ["koa-bodyparser", "@types/koa-bodyparser"],
-      "replacementName": "@koa/bodyparser",
-      "replacementVersion": "6.0.0"
-    },
-    {
-      "groupName": "koa v3",
-      "matchPackageNames": ["koa", "@types/koa"],
-      "separateMajorMinor": false,
-      "matchCurrentVersion": "^2.0.0"
-    },
-    {
-      "groupName": "koa v3",
-      "matchPackageNames": ["seek-koala"],
-      "separateMajorMinor": false,
-      "matchCurrentVersion": ">=7.0.0 <7.1.0"
-    },
-    {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["gcr.io/distroless/nodejs22-debian12"],
-      "replacementName": "gcr.io/distroless/nodejs22-debian13"
-    },
-    {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["gcr.io/distroless/nodejs20-debian12"],
-      "replacementName": "gcr.io/distroless/nodejs20-debian13"
-    },
-    {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["gcr.io/distroless/nodejs24-debian12"],
-      "replacementName": "gcr.io/distroless/nodejs24-debian13"
-    },
-
-    {
-      "matchDatasources": ["npm"],
-      "matchPackageNames": ["dd-trace"],
-      "matchCurrentVersion": "5.80.0",
-      "replacementName": "dd-trace",
-      "replacementVersion": "5.79.0"
-    },
-    {
-      "matchDatasources": ["npm"],
-      "matchPackageNames": ["dd-trace"],
-      "allowedVersions": "< 5.80.0",
-      "rollbackPrs": true
     }
-  ],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": ["pnpm.md$", "(^|/)_package\\.json$"],
-      "matchStrings": [
-        "\"packageManager\": \"(?<depName>.*?)@(?<currentValue>.*?)\","
-      ],
-      "datasourceTemplate": "npm"
-    }
-  ],
-  "gitIgnoredAuthors": [
-    "34733141+seek-oss-ci@users.noreply.github.com",
-    "87109344+buildagencygitapitoken[bot]@users.noreply.github.com"
-  ],
-  "postUpdateOptions": ["yarnDedupeFewer", "pnpmDedupe"],
-  "prNotPendingHours": 1,
-  "semanticCommitScope": "",
-  "semanticCommitType": "deps"
+  ]
 }
