@@ -1,5 +1,6 @@
 {
-  "extends": ["local>seek-jobs/indie-renovate-config"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>seek-oss/rynovate"],
   "packageRules": [
     {
       "matchDatasources": ["docker"],
