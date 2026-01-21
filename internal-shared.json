@@ -80,18 +80,21 @@
       "matchDatasources": ["docker"],
       "matchPackageNames": ["gcr.io/distroless/nodejs20-debian12"],
       "replacementName": "gcr.io/distroless/nodejs20-debian13",
+      "groupName": "distroless nodejs debian13",
       "minimumReleaseAge": "0 days"
     },
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["gcr.io/distroless/nodejs22-debian12"],
       "replacementName": "gcr.io/distroless/nodejs22-debian13",
+      "groupName": "distroless nodejs debian13",
       "minimumReleaseAge": "0 days"
     },
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["gcr.io/distroless/nodejs24-debian12"],
       "replacementName": "gcr.io/distroless/nodejs24-debian13",
+      "groupName": "distroless nodejs debian13",
       "minimumReleaseAge": "0 days"
     },
     {
