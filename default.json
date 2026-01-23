@@ -121,6 +121,7 @@
       "groupName": "serverless",
       "matchManagers": ["custom.regex", "npm"],
       "matchPackageNames": ["serverless"],
+      "matchCurrentVersion": ">=4.0.0",
       "separateMajorMinor": false
     },
     {
