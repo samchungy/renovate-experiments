@@ -1,0 +1,391 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    ":dependencyDashboard",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":timezone(Australia/Melbourne)",
+    "preview:buildkite",
+    "preview:dockerCompose",
+    "docker:disableMajor",
+    "group:monorepos",
+    "docker:pinDigests",
+    "github>samchungy/renovate-experiments:internal-shared"
+  ],
+  "packageRules": [
+    {
+      "matchDepTypes": ["peerDependencies"],
+
+      "rangeStrategy": "widen"
+    },
+    {
+      "matchManagers": ["buildkite", "gomod", "npm", "nvm"],
+
+      "commitMessageExtra": "{{newValue}}",
+      "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchManagers": ["gomod"],
+
+      "digest": {
+        "commitMessageExtra": "",
+        "groupName": "gomod digests",
+        "schedule": "after 3:00 am and before 6:00 am on the first day of the month"
+      },
+      "semanticCommitType": "fix"
+    },
+    {
+      "matchDepTypes": ["dependencies", "peerDependencies"],
+      "matchManagers": ["npm"],
+
+      "semanticCommitType": "fix"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["@types/node"],
+      "allowedVersions": "<=22"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["node-fetch"],
+      "matchUpdateTypes": ["major"],
+
+      "enabled": false
+    },
+    {
+      "matchDepNames": ["node"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["aws-sdk-client-mock", "aws-sdk-client-mock-jest"],
+      "groupName": "aws-sdk client mock"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["/^@types//"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+
+      "automerge": true
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["/^@types//"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+
+      "commitMessageExtra": "",
+      "groupName": "npm definitely typed",
+      "prPriority": 99,
+      "schedule": "before 3:00 am every 2 weeks on Tuesday"
+    },
+    {
+      "groupName": "koa v3",
+      "matchPackageNames": ["koa", "@types/koa"],
+      "separateMajorMinor": false,
+      "matchCurrentVersion": "^2.0.0"
+    },
+    {
+      "groupName": "koa v3",
+      "matchPackageNames": ["seek-koala"],
+      "separateMajorMinor": false,
+      "matchCurrentVersion": ">=7.0.0 <7.1.0"
+    },
+    {
+      "groupName": "skuba 14",
+      "matchPackageNames": ["skuba"],
+      "matchCurrentVersion": "<14.0.0",
+      "separateMajorMinor": false
+    },
+    {
+      "groupName": "skuba 14",
+      "matchPackageNames": ["serverless"],
+      "matchCurrentVersion": "<4.0.0",
+      "replacementName": "osls",
+      "replacementVersion": "3.61.0"
+    },
+    {
+      "groupName": "skuba 13",
+      "matchPackageNames": ["skuba"],
+      "matchCurrentVersion": ">=12.0.0 <13.0.0",
+      "separateMajorMinor": false
+    },
+    {
+      "groupName": "skuba 13",
+      "matchPackageNames": ["@seek/backstage-catalog-lint"],
+      "matchCurrentVersion": "<1.29.7",
+      "separateMajorMinor": false
+    },
+    {
+      "groupName": "skuba v12.14.1 and pnpm v10.17",
+      "matchPackageNames": ["skuba"],
+      "allowedVersions": ">=12.4.1",
+      "matchCurrentVersion": "<12.4.1",
+      "separateMajorMinor": false
+    },
+    {
+      "groupName": "skuba v12.14.1 and pnpm v10.17",
+      "matchPackageNames": ["pnpm"],
+      "allowedVersions": ">=10.17.0",
+      "matchCurrentVersion": "<10.17.0",
+      "separateMajorMinor": false
+    },
+    {
+      "groupName": "serverless",
+      "matchManagers": ["custom.regex", "npm"],
+      "matchPackageNames": ["serverless"],
+      "separateMajorMinor": false
+    },
+    {
+      "matchDepNames": [
+        "!/^@?seek/",
+        "!/^@aws-sdk//",
+        "!/^@types//",
+        "!/^@vanilla-extract//",
+        "!/seek$/",
+        "!aws-sdk",
+        "!braid-design-system",
+        "!serverless",
+        "!sku",
+        "!skuba"
+      ],
+      "matchDepTypes": ["devDependencies"],
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+
+      "commitMessageExtra": "",
+      "groupName": "npm dev dependencies",
+      "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Tuesday"
+    },
+    {
+      "matchDepTypes": ["peerDependencies"],
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+
+      "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Tuesday"
+    },
+    {
+      "matchDepNames": ["!/^seek-jobs//", "!/^seek-oss//"],
+      "matchManagers": ["buildkite"],
+
+      "additionalBranchPrefix": "",
+      "commitMessageExtra": "",
+      "groupName": "buildkite plugins",
+      "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Wednesday"
+    },
+    {
+      "matchManagers": ["docker-compose", "dockerfile"],
+
+      "commitMessageExtra": "",
+      "group": {
+        "commitMessageTopic": "{{groupName}}"
+      },
+      "groupName": "docker images",
+      "schedule": "after 3:00 am and before 6:00 am every 2 weeks on Wednesday"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": [
+        "/^@seek//",
+        "eslint-config-seek",
+        "eslint-config-skuba",
+        "eslint-plugin-skuba",
+        "tsconfig-seek",
+        "braid-design-system",
+        "sku"
+      ],
+
+      "prPriority": 98,
+      "schedule": "after 3:00 am and before 6:00 am every weekday",
+      "minimumReleaseAge": "0 days",
+      "updateNotScheduled": true
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["skuba"],
+
+      "separateMultipleMajor": true,
+      "prPriority": 98,
+      "schedule": "after 3:00 am and before 6:00 am every weekday",
+      "minimumReleaseAge": "0 days",
+      "updateNotScheduled": true
+    },
+    {
+      "matchManagers": ["buildkite"],
+      "matchDepNames": ["seek-jobs/gantry"],
+
+      "schedule": "after 3:00 am and before 5:00 pm every weekday",
+      "minimumReleaseAge": "1 hour",
+      "updateNotScheduled": true
+    },
+    {
+      "matchManagers": ["buildkite"],
+      "matchDepNames": ["seek-jobs/automat"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["buildkite"],
+      "matchDepNames": ["seek-jobs/automat"],
+
+      "schedule": "after 3:00 am and before 5:00 pm every weekday",
+      "minimumReleaseAge": "1 hour",
+      "updateNotScheduled": true
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["aws-sdk", "/^@aws-sdk//", "/^@smithy//"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+
+      "commitMessageExtra": "",
+      "groupName": "aws-sdk",
+      "schedule": "after 3:00 am and before 6:00 am on the first day of the month",
+      "updateNotScheduled": true
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["apollo-server-plugin-base", "apollo-server-types"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+
+      "groupName": "apollo-server monorepo"
+    },
+    {
+      "matchDepNames": ["pnpm"],
+      "schedule": "before 6:00 am every 2 weeks on Thursday"
+    },
+    {
+      "matchDepNames": ["pnpm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchManagers": ["npm"],
+      "matchDepNames": [
+        "@seek/backoffice-access",
+        "@seek/ca-graphql-schema",
+        "@seek/hirer-jobs-types",
+        "@seek/ie-shared-types",
+        "@seek/indie-cardib-types"
+      ],
+
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchManagers": ["npm"],
+      "matchDepNames": [
+        "@seek/backoffice-access",
+        "@seek/ca-graphql-schema",
+        "@seek/hirer-jobs-types",
+        "@seek/ie-shared-types",
+        "@seek/indie-cardib-types"
+      ],
+
+      "schedule": "before 3:00 am every weekday"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": ["sku", "skuba"],
+      "matchUpdateTypes": ["patch"],
+
+      "automerge": true
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepNames": [
+        "@seek/apply-pipeline-contracts",
+        "@seek/blobstore-consumer-sdk",
+        "@seek/candidate-data-contracts",
+        "@seek/indie-api-types",
+        "@seek/indie-mocks"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+
+      "automerge": true,
+      "schedule": "before 3:00 am every weekday",
+      "updateNotScheduled": true
+    },
+    {
+      "matchDepNames": ["react-relay", "/^relay-/"],
+
+      "groupName": "relay"
+    },
+    {
+      "matchUpdateTypes": ["lockFileMaintenance"],
+
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["lockFileMaintenance"],
+
+      "prPriority": 99,
+      "schedule": "before 3:00 am every 2 weeks on Wednesday"
+    },
+    {
+      "matchUpdateTypes": ["pin"],
+
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["pin"],
+
+      "prPriority": 99,
+      "schedule": "before 3:00 am every weekday"
+    },
+    {
+      "matchUpdateTypes": ["digest", "pinDigest"],
+      "matchManagers": ["dockerfile"],
+      "automerge": true,
+      "recreateWhen": "always"
+    },
+    {
+      "matchUpdateTypes": ["digest", "pinDigest"],
+      "matchManagers": ["dockerfile"],
+      "schedule": ["before 7:00 on Monday"],
+      "prPriority": 99
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)infra/.*\\.ts$"],
+      "matchStrings": [
+        "const DATADOG_EXTENSION_LAYER_VERSION = (?<currentValue>\\d+)"
+      ],
+      "packageNameTemplate": "DataDog/datadog-lambda-extension",
+      "depNameTemplate": "datadog lambda extension layer",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)infra/.*\\.ts$"],
+      "matchStrings": [
+        "const DATADOG_NODE_LAYER_VERSION = (?<currentValue>\\d+)"
+      ],
+      "extractVersionTemplate": "^v\\d+\\.(?<version>\\d+)\\.",
+      "depNameTemplate": "datadog-lambda-js",
+      "packageNameTemplate": "datadog-lambda-js",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/(^|/)serverless(\\..*)?\\.ya?ml$/"],
+      "matchStrings": [
+        "frameworkVersion:\\s*['\"](?<currentValue>[^'\"]+)['\"]"
+      ],
+      "depNameTemplate": "serverless",
+      "datasourceTemplate": "npm"
+    }
+  ],
+  "branchConcurrentLimit": null,
+  "branchPrefix": "renovate-",
+  "commitMessageAction": "",
+  "prConcurrentLimit": 3,
+  "rangeStrategy": "replace",
+  "schedule": "after 3:00 am and before 6:00 am on Monday and Friday",
+  "prCreation": "immediate",
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "updateNotScheduled": false
+}
