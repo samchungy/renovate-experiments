@@ -92,13 +92,13 @@
       "matchCurrentVersion": ">=7.0.0 <7.1.0"
     },
     {
-      "groupName": "skuba v14",
+      "groupName": "skuba 14 and osls",
       "matchPackageNames": ["skuba"],
       "matchCurrentVersion": "<14.1.0",
       "separateMajorMinor": false
     },
     {
-      "groupName": "skuba v14",
+      "groupName": "skuba 14 and osls",
       "matchPackageNames": ["serverless"],
       "matchCurrentVersion": "<4.0.0",
       "replacementName": "osls",
