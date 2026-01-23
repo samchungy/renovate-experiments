@@ -135,7 +135,8 @@
       "matchPackageNames": ["serverless"],
       "matchCurrentVersion": "<4.0.0",
       "replacementName": "osls",
-      "replacementVersion": "3.61.0"
+      "replacementVersion": "3.61.0",
+      "separateMajorMinor": false
     },
     {
       "matchDepNames": [
