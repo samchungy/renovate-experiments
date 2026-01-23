@@ -119,18 +119,15 @@
     },
     {
       "groupName": "serverless",
-      "matchManagers": ["custom.regex", "npm"],
       "matchPackageNames": ["serverless"],
-      "matchCurrentVersion": ">=4.0.0",
-      "separateMajorMinor": false
+      "matchCurrentVersion": "<4.0.0",
+      "enabled": false
     },
     {
       "groupName": "skuba 14 and osls",
       "matchPackageNames": ["skuba"],
       "matchCurrentVersion": "<14.0.0",
-      "separateMajorMinor": false,
-      "separateMultipleMajor": false,
-      "minimumReleaseAge": "0 days"
+      "separateMajorMinor": false
     },
     {
       "groupName": "skuba 14 and osls",
