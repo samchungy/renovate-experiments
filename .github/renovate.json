@@ -124,7 +124,6 @@
       "separateMajorMinor": false
     },
     {
-      "groupName": "skuba 14 and osls",
       "matchPackageNames": ["serverless"],
       "matchCurrentVersion": "<4.0.0",
       "replacementName": "osls",
