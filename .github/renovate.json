@@ -118,12 +118,6 @@
       "separateMajorMinor": false
     },
     {
-      "groupName": "serverless",
-      "matchPackageNames": ["serverless"],
-      "matchCurrentVersion": "<4.0.0",
-      "enabled": false
-    },
-    {
       "groupName": "skuba 14 and osls",
       "matchPackageNames": ["skuba"],
       "matchCurrentVersion": "<14.0.0",
