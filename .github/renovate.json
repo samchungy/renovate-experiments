@@ -92,6 +92,19 @@
       "matchCurrentVersion": ">=7.0.0 <7.1.0"
     },
     {
+      "groupName": "skuba v14",
+      "matchPackageNames": ["skuba"],
+      "matchCurrentVersion": "<14.1.0",
+      "separateMajorMinor": false
+    },
+    {
+      "groupName": "skuba v14",
+      "matchPackageNames": ["serverless"],
+      "matchCurrentVersion": "<4.0.0",
+      "replacementName": "osls",
+      "replacementVersion": "3.61.0"
+    },
+    {
       "groupName": "skuba 13",
       "matchPackageNames": ["skuba"],
       "matchCurrentVersion": ">=12.0.0 <13.0.0",
@@ -116,19 +129,6 @@
       "allowedVersions": ">=10.17.0",
       "matchCurrentVersion": "<10.17.0",
       "separateMajorMinor": false
-    },
-    {
-      "groupName": "skuba v14",
-      "matchPackageNames": ["skuba"],
-      "matchCurrentVersion": "<14.1.0",
-      "separateMajorMinor": false
-    },
-    {
-      "groupName": "skuba v14",
-      "matchPackageNames": ["serverless"],
-      "matchCurrentVersion": "<4.0.0",
-      "replacementName": "osls",
-      "replacementVersion": "3.61.0"
     },
     {
       "groupName": "serverless",
