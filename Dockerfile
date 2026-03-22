@@ -4,6 +4,8 @@ ARG BASE_IMAGE
 
 FROM public.ecr.aws/docker/library/node:22-alpine AS build
 
+FROM public.ecr.aws/docker/library/node:24-alpine AS build
+
 COPY . .
 
 RUN pnpm install --offline
