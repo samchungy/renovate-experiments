@@ -7,12 +7,17 @@
     ":timezone(Australia/Melbourne)",
     "preview:buildkite",
     "preview:dockerCompose",
-    "docker:disableMajor",
+    "docker:enableMajor",
     "group:monorepos",
     "docker:pinDigests",
     "github>samchungy/renovate-experiments:internal-shared"
   ],
   "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["/(?:^|\\/)node$/"],
+      "allowedVersions": "< 25"
+    },
     {
       "matchDepTypes": ["peerDependencies"],
 
