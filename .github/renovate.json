@@ -10,8 +10,8 @@
     "docker:enableMajor",
     "group:monorepos",
     "docker:pinDigests",
-    "github>samchungy/renovate-experiments:internal-shared",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigestsToSemver",
+    "github>samchungy/renovate-experiments:internal-shared"
   ],
   "packageRules": [
     {
