@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "skuba": "13.0.0",
-    "serverless": "3.34.0"
+    "skuba": "15.3.0",
+    "serverless": "4.35.0"
   },
   "packageManager": "pnpm@10.30.3"
 }
