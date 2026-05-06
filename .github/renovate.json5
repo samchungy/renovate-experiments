@@ -1,4 +1,0 @@
-{
-  configMigration: true,
-  extends: ['github>samchungy/renovate-experiments'],
-}
