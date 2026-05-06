@@ -348,7 +348,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)infra/.*\\.ts$"],
+      "managerFilePatterns": ["/(^|/)infra/.*\\.ts$/"],
       "matchStrings": [
         "const DATADOG_EXTENSION_LAYER_VERSION = (?<currentValue>\\d+)"
       ],
@@ -358,7 +358,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)infra/.*\\.ts$"],
+      "managerFilePatterns": ["/(^|/)infra/.*\\.ts$/"],
       "matchStrings": [
         "const DATADOG_NODE_LAYER_VERSION = (?<currentValue>\\d+)"
       ],
