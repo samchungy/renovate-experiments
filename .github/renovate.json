@@ -375,6 +375,19 @@
       ],
       "depNameTemplate": "serverless",
       "datasourceTemplate": "npm"
+    },
+    {
+      "description": "Golden distroless-node-24 ← gcr.io/distroless/nodejs24-debian13",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["replacement"],
+      "matchPackageNames": ["gcr.io/distroless/nodejs24-debian13"],
+      "replacementName": "public.ecr.aws/seek-hirer-granite/distroless-node-24",
+      "replacementVersion": "latest",
+      "additionalBranchPrefix": "golden-distroless-node-24-",
+      "schedule": ["at any time"],
+      "minimumReleaseAgeBehaviour": "timestamp-optional",
+      "prConcurrentLimit": 0,
+      "prPriority": 100
     }
   ],
   "branchConcurrentLimit": null,
