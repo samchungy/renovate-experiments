@@ -345,9 +345,15 @@
       "prPriority": 99
     },
     {
+      "description": "Disable digest updates for packages being replaced",
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["gcr.io/distroless/nodejs24-debian13"],
+      "matchUpdateTypes": ["digest", "pinDigest"],
+      "enabled": false
+    },
+    {
       "description": "Golden distroless-node-24 ← gcr.io/distroless/nodejs24-debian13",
       "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["replacement"],
       "matchPackageNames": ["gcr.io/distroless/nodejs24-debian13"],
       "replacementName": "public.ecr.aws/seek-hirer-granite/distroless-node-24",
       "replacementVersion": "latest",
