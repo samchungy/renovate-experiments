@@ -15,6 +15,18 @@
   ],
   "packageRules": [
     {
+      "description": "Golden distroless-node-24 ← gcr.io/distroless/nodejs24-debian13",
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["gcr.io/distroless/nodejs24-debian13"],
+      "excludeUpdateTypes": ["digest", "pinDigest"],
+      "replacementName": "public.ecr.aws/seek-hirer-granite/distroless-node-24",
+      "additionalBranchPrefix": "golden-distroless-node-24-",
+      "schedule": ["at any time"],
+      "minimumReleaseAgeBehaviour": "timestamp-optional",
+      "prConcurrentLimit": 0,
+      "prPriority": 100
+    },
+    {
       "matchDatasources": ["docker"],
       "matchDepNames": ["/(?:^|\\/)node$/"],
       "allowedVersions": "< 25"
@@ -343,24 +355,6 @@
       "matchManagers": ["dockerfile"],
       "schedule": ["before 7:00 on Monday"],
       "prPriority": 99
-    },
-    {
-      "description": "Disable digest updates for packages being replaced",
-      "matchDatasources": ["docker"],
-      "matchDepNames": ["gcr.io/distroless/nodejs24-debian13"],
-      "matchUpdateTypes": ["digest", "pinDigest"],
-      "enabled": false
-    },
-    {
-      "description": "Golden distroless-node-24 ← gcr.io/distroless/nodejs24-debian13",
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["gcr.io/distroless/nodejs24-debian13"],
-      "replacementName": "public.ecr.aws/seek-hirer-granite/distroless-node-24",
-      "additionalBranchPrefix": "golden-distroless-node-24-",
-      "schedule": ["at any time"],
-      "minimumReleaseAgeBehaviour": "timestamp-optional",
-      "prConcurrentLimit": 0,
-      "prPriority": 100
     }
   ],
   "customManagers": [
