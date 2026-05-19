@@ -18,7 +18,6 @@
       "description": "Golden distroless-node-24 ← gcr.io/distroless/nodejs24-debian13",
       "matchDatasources": ["docker"],
       "matchDepNames": ["gcr.io/distroless/nodejs24-debian13"],
-      "excludeUpdateTypes": ["digest", "pinDigest"],
       "replacementName": "public.ecr.aws/seek-hirer-granite/distroless-node-24",
       "additionalBranchPrefix": "golden-distroless-node-24-",
       "schedule": ["at any time"],
