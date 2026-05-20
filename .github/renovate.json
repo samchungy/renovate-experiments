@@ -22,7 +22,7 @@
         "docker.io/library/node",
         "public.ecr.aws/docker/library/node"
       ],
-      "matchCurrentVersion": "/^22(.+)?-alpine/",
+      "matchCurrentValue": "/^22(.+)?-alpine/",
       "replacementName": "public.ecr.aws/seek-hirer-granite/node-22-alpine",
       "additionalBranchPrefix": "golden-node-22-alpine-",
       "schedule": ["at any time"],
