@@ -24,6 +24,7 @@
       ],
       "matchCurrentValue": "/^22(.+)?-alpine/",
       "replacementName": "public.ecr.aws/seek-hirer-granite",
+      "replacementVersion": "node-22-alpine",
       "additionalBranchPrefix": "golden-node-22-alpine-",
       "schedule": ["at any time"],
       "minimumReleaseAgeBehaviour": "timestamp-optional",
