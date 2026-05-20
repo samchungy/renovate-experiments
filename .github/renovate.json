@@ -24,7 +24,7 @@
       ],
       "matchCurrentValue": "/^22(.+)?-alpine/",
       "replacementName": "public.ecr.aws/seek-hirer-granite/node-22-alpine",
-      "replacementVersion": "",
+      "replacementVersion": "latest",
       "additionalBranchPrefix": "golden-node-22-alpine-",
       "schedule": ["at any time"],
       "minimumReleaseAgeBehaviour": "timestamp-optional",
@@ -41,6 +41,17 @@
       "minimumReleaseAgeBehaviour": "timestamp-optional",
       "prConcurrentLimit": 0,
       "prPriority": 100
+    },
+    {
+      "description": "Disable digest PRs for node images (version bumps are handled via golden image replacements)",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "node",
+        "docker.io/library/node",
+        "public.ecr.aws/docker/library/node"
+      ],
+      "matchUpdateTypes": ["digest"],
+      "enabled": false
     },
     {
       "matchDatasources": ["docker"],
