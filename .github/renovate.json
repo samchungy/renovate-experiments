@@ -15,6 +15,22 @@
   ],
   "packageRules": [
     {
+      "description": "Golden node-22-alpine ← Docker Hub node (tags like 22-alpine, 22.x-alpine)",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "node",
+        "docker.io/library/node",
+        "public.ecr.aws/docker/library/node"
+      ],
+      "matchCurrentVersion": "/^22(.+)?-alpine/",
+      "replacementName": "public.ecr.aws/seek-hirer-granite/node-22-alpine",
+      "additionalBranchPrefix": "golden-node-22-alpine-",
+      "schedule": ["at any time"],
+      "minimumReleaseAgeBehaviour": "timestamp-optional",
+      "prConcurrentLimit": 0,
+      "prPriority": 100
+    },
+    {
       "description": "Golden distroless-node-24 ← gcr.io/distroless/nodejs24-debian13",
       "matchDatasources": ["docker"],
       "matchDepNames": ["gcr.io/distroless/nodejs24-debian13"],
