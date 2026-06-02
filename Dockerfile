@@ -4,7 +4,7 @@ ARG BASE_IMAGE
 
 FROM public.ecr.aws/docker/library/node:22-alpine AS build
 
-FROM node:22-alpine AS build
+FROM public.ecr.aws/seek-hirer-granite/node-22-alpine:latest AS build
 
 FROM public.ecr.aws/docker/library/node:24-alpine AS build
 
