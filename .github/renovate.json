@@ -15,12 +15,6 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["digest", "pinDigest"],
-      "enabled": false,
-      "matchPackageNames": ["/(^|/)node(js|$)/"]
-    },
-    {
       "description": "Golden node-22-alpine ← Docker Hub node (tags like 22-alpine, 22.x-alpine)",
       "matchDatasources": ["docker"],
       "matchPackageNames": [
@@ -431,5 +425,8 @@
   "prCreation": "immediate",
   "minimumReleaseAge": "3 days",
   "internalChecksFilter": "strict",
-  "updateNotScheduled": false
+  "updateNotScheduled": false,
+  "registryAliases": {
+    "111111111111.dkr.ecr.ap-southeast-2.amazonaws.com/public.ecr.aws": "public.ecr.aws"
+  }
 }
