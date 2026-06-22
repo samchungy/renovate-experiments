@@ -2,9 +2,9 @@ ARG BASE_IMAGE
 
 ###
 
-FROM public.ecr.aws/docker/library/node:22-alpine AS build
+FROM public.ecr.aws/docker/library/node:22-alpine@sha256:ab07539e0988b63558ff621f5fbe1077054c39d9809112974fb79993949d41cd AS build
 
-FROM node:22-alpine AS build
+FROM node:22-alpine@sha256:ab07539e0988b63558ff621f5fbe1077054c39d9809112974fb79993949d41cd AS build
 
 FROM 111111111111.dkr.ecr.ap-southeast-2.amazonaws.com/public.ecr.aws/docker/library/node:24-alpine AS build
 
