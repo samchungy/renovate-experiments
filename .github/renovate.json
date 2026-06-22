@@ -16,7 +16,7 @@
   "packageRules": [
     {
       "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["digest"],
+      "matchUpdateTypes": ["digest", "pinDigest"],
       "enabled": false,
       "matchPackageNames": ["/(^|/)node(js|$)/"]
     },
