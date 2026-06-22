@@ -16,9 +16,9 @@
   "packageRules": [
     {
       "matchDatasources": ["docker"],
-      "matchPackagePatterns": ["(^|/)node(js|$)"],
       "matchUpdateTypes": ["digest"],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": ["/(^|/)node(js|$)/"]
     },
     {
       "description": "Golden node-22-alpine ← Docker Hub node (tags like 22-alpine, 22.x-alpine)",
