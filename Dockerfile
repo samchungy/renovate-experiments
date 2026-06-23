@@ -6,7 +6,7 @@ FROM public.ecr.aws/docker/library/node:22-alpine AS build
 
 FROM node:22-alpine AS build
 
-FROM 111111111111.dkr.ecr.ap-southeast-2.amazonaws.com/public.ecr.aws/docker/library/node:24-alpine AS build
+FROM 111111111111.dkr.ecr.ap-southeast-2.amazonaws.com/public.ecr.aws/docker/library/node:24-alpine@sha256:156b55f92e98ccd5ef49578a8cea0df4679826564bad1c9d4ef04462b9f0ded6 AS build
 
 COPY . .
 
