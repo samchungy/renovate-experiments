@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:22-alpine@sha256:9632533eda8061fc1e9960cfb3f8762781c07a00ee7317f5dc0e13c05e15166f AS dev-deps
+FROM public.ecr.aws/seek-hirer-granite/node-22-alpine:latest@sha256:09e0585f6ebd626d5e3a7c780bcb84fa63dfe209282e0bf09556f20a4aafe008 AS dev-deps
 
 ENV COREPACK_DEFAULT_TO_LATEST=0
 
