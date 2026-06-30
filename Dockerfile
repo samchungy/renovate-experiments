@@ -16,11 +16,11 @@ RUN pnpm --filter api --prod --offline deploy api
 
 ###
 
-FROM gcr.io/distroless/nodejs24-debian13
+FROM public.ecr.aws/seek-hirer-granite/distroless-node-24
 
 FROM gcr.io/distroless/nodejs22-debian12
 
-FROM gcr.io/distroless/nodejs24-debian13@sha256:b25d2acae94fcf57d27f3ac29135ecdce9c0be1e8585ef52262f0dde6b36ce72 AS runtime
+FROM public.ecr.aws/seek-hirer-granite/distroless-node-24@sha256:e787865e1c869611d19dc330882a9f41a1a2730f94a60a1b22ee8d6f637bcf92 AS runtime
 
 WORKDIR /workdir
 
