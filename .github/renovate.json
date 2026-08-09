@@ -15,32 +15,15 @@
   ],
   "packageRules": [
     {
-      "description": "Golden node-22-alpine ← Docker Hub node (tags like 22-alpine, 22.x-alpine)",
+      "description": "Mirror public.ecr.aws images through the internal ECR pull-through cache, e.g. public.ecr.aws/docker/library/node:22-alpine -> 111111111111.dkr.ecr.ap-southeast-2.amazonaws.com/public.ecr.aws/docker/library/node:22-alpine",
       "matchDatasources": ["docker"],
-      "matchPackageNames": [
-        "node",
-        "docker.io/library/node",
-        "public.ecr.aws/docker/library/node"
-      ],
-      "matchCurrentValue": "/^22(.+)?-alpine/",
-      "replacementName": "public.ecr.aws/seek-hirer-granite/node-22-alpine",
-      "replacementVersion": "latest",
-      "additionalBranchPrefix": "golden-node-22-alpine-",
-      "schedule": ["at any time"],
-      "minimumReleaseAgeBehaviour": "timestamp-optional",
-      "prConcurrentLimit": 0,
-      "prPriority": 100
-    },
-    {
-      "description": "Golden distroless-node-24 ← gcr.io/distroless/nodejs24-debian13",
-      "matchDatasources": ["docker"],
-      "matchDepNames": ["gcr.io/distroless/nodejs24-debian13"],
-      "replacementName": "public.ecr.aws/seek-hirer-granite/distroless-node-24",
-      "additionalBranchPrefix": "golden-distroless-node-24-",
-      "schedule": ["at any time"],
-      "minimumReleaseAgeBehaviour": "timestamp-optional",
-      "prConcurrentLimit": 0,
-      "prPriority": 100
+      "matchPackageNames": ["/^public\\.ecr\\.aws\\//"],
+      "replacementNameTemplate": "{{{replace '^public\\.ecr\\.aws/' '111111111111.dkr.ecr.ap-southeast-2.amazonaws.com/public.ecr.aws/' packageName}}}",
+      "additionalBranchPrefix": "ecr-mirror-",
+      "group": {
+        "commitMessageTopic": "ECR mirror replacements"
+      },
+      "groupName": "ecr mirror replacements"
     },
     {
       "description": "Disable digest PRs for node images (version bumps are handled via golden image replacements)",
