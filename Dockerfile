@@ -16,7 +16,7 @@ RUN pnpm --filter api --prod --offline deploy api
 
 ###
 
-FROM gcr.io/distroless/nodejs24-debian13
+FROM gcr.io/distroless/nodejs24-debian13@sha256:b1fc33242cc74151f50c62b4a03d48afd759dccf81279b5f8e401db4546479c1
 
 FROM gcr.io/distroless/nodejs22-debian12
 
