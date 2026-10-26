@@ -11,7 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "skuba": "13.0.0",
-    "serverless": "3.34.0"
+    "serverless": "3.34.0",
+    "datadog-lambda-js": "12.129.0"
   },
   "packageManager": "pnpm@10.30.3"
 }
