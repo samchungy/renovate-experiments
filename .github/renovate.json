@@ -366,6 +366,10 @@
       "matchManagers": ["dockerfile"],
       "schedule": ["before 7:00 on Monday"],
       "prPriority": 99
+    },
+    {
+      "matchDepNames": ["datadog-lambda-js"],
+      "groupName": "datadog-lambda-js"
     }
   ],
   "customManagers": [
@@ -386,7 +390,7 @@
         "const DATADOG_NODE_LAYER_VERSION = (?<currentValue>\\d+)"
       ],
       "extractVersionTemplate": "^v\\d+\\.(?<version>\\d+)\\.",
-      "groupName": "datadog-lambda-js",
+      "depNameTemplate": "datadog-lambda-js",
       "packageNameTemplate": "DataDog/datadog-lambda-js",
       "datasourceTemplate": "github-releases"
     },
