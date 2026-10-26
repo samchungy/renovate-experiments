@@ -386,7 +386,7 @@
         "const DATADOG_NODE_LAYER_VERSION = (?<currentValue>\\d+)"
       ],
       "extractVersionTemplate": "^v\\d+\\.(?<version>\\d+)\\.",
-      "depNameTemplate": "datadog-lambda-js",
+      "groupName": "datadog-lambda-js",
       "packageNameTemplate": "DataDog/datadog-lambda-js",
       "datasourceTemplate": "github-releases"
     },
