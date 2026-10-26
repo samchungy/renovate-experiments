@@ -20,7 +20,7 @@ import { config } from './config';
 // Updated by https://github.com/seek-oss/rynovate
 const DATADOG_EXTENSION_LAYER_VERSION = 64;
 
-const DATADOG_NODE_LAYER_VERSION = 126;
+const DATADOG_NODE_LAYER_VERSION = 143;
 
 export class AppStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
