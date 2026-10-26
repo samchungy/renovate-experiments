@@ -369,7 +369,8 @@
     },
     {
       "matchDepNames": ["datadog-lambda-js"],
-      "groupName": "datadog-lambda-js"
+      "groupName": "datadog-lambda-js",
+      "separateMajorMinor": false
     }
   ],
   "customManagers": [
