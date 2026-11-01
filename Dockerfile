@@ -4,7 +4,7 @@ ARG BASE_IMAGE
 
 FROM public.ecr.aws/docker/library/node:22-alpine AS build
 
-FROM node:22-alpine AS build
+FROM node:22-alpine@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914 AS build
 
 FROM 111111111111.dkr.ecr.ap-southeast-2.amazonaws.com/public.ecr.aws/docker/library/node:24-alpine AS build
 
@@ -16,7 +16,7 @@ RUN pnpm --filter api --prod --offline deploy api
 
 ###
 
-FROM gcr.io/distroless/nodejs24-debian13
+FROM gcr.io/distroless/nodejs24-debian13@sha256:03980f6fd2a3245fa06e371c36fd33528ebbc676a1d0f84e3e21d95cd291b807
 
 FROM gcr.io/distroless/nodejs22-debian12
 
