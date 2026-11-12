@@ -14,6 +14,8 @@ RUN pnpm install --offline
 RUN pnpm build
 RUN pnpm --filter api --prod --offline deploy api
 
+RUN npm i -g pnpm@10.30.1
+
 ###
 
 FROM gcr.io/distroless/nodejs24-debian13
