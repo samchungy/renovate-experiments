@@ -14,5 +14,5 @@
     "serverless": "3.34.0",
     "datadog-lambda-js": "12.129.0"
   },
-  "packageManager": "pnpm@10.30.3"
+  "packageManager": "pnpm@12.18.0"
 }
